@@ -54,7 +54,6 @@ class ShopsController < ApplicationController
     respond_to do |format|
       format.turbo_stream { render turbo_stream: turbo_stream.remove("#{helpers.dom_id(@shop)}_item") }
       format.html { redirect_to shops_url, notice: "Shop was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
