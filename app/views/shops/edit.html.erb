@@ -1,10 +1,4 @@
-<h1>Editing shop</h1>
+<%= turbo_frame_tag dom_id(@shop) do %>
+  <%= render "form", shop: @shop %>
+<% end %>
 
-<%= render "form", shop: @shop %>
-
-<br>
-
-<div>
-  <%= link_to "Show this shop", @shop %> |
-  <%= link_to "Back to shops", shops_path %>
-</div>
