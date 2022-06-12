@@ -1,14 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Shops</h1>
-
-<div id="shops">
-  <% @shops.each do |shop| %>
-    <%= render shop %>
-    <p>
-      <%= link_to "Show this shop", shop %>
-    </p>
-  <% end %>
+<div class="row">
+  <p style="color: green"><%#= notice %></p>
+  <div class="mx-auto">
+    <h1>Shopping List</h1>
+    <%= render 'form', shop: Shop.new %>
+    <div id="shops">
+      <%= render @shops %>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New shop", new_shop_path %>

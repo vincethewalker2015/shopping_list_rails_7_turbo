@@ -1,0 +1,7 @@
+<%= turbo_stream.prepend "shops" do %>
+  <%= render "shop", todo: @shop %>
+<% end %>
+
+<%= turbo_stream.replace "#{dom_id(Shop.new)}_form" do %>
+  <%= render "form", shop: Shop.new %>
+<% end %>
