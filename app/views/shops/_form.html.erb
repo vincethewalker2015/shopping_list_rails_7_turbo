@@ -1,25 +1,20 @@
-<%= form_with(model: shop, id: "#{dom_id(shop)}_form") do |form| %>
-  <% if shop.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(shop.errors.count, "error") %> prohibited this shop from being saved:</h2>
-
-      <ul>
-        <% shop.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="row">
+  <div class="col">
+    <%= form_with(model: shop, id: "#{dom_id(shop)}_form") do |form| %>
+  <%= render "shops/errors" %>
 
   <div class="form-group d-flex">
   <div>
-    <%= form.label :item, style: "display: block" %>
-    <%= form.text_field :item %>
+    <%#= form.label :item, style: "display: block" %>
+    <%= form.text_field :item, class: "form-control", placeholder: "Add item" %>
   </div>
 
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-success" %>
   </div>
   </div>
 <% end %>
+
+  </div>
+</div>
