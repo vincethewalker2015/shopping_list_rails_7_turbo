@@ -26,10 +26,10 @@ class ShopsController < ApplicationController
     respond_to do |format|
       if @shop.save
         format.turbo_stream
-        format.html { redirect_to shops_url, notice: "Item was added." }
+        # format.html { redirect_to shops_url, notice: "Item was added." }
       else
         format.turbo_stream { render turbo_stream: turbo_stream.replace("#{helpers.dom_id(@shop)}_form", partial: "form", locals: { shop: @shop })}
-        format.html { render :new, status: :unprocessable_entity }
+        # format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
@@ -39,10 +39,10 @@ class ShopsController < ApplicationController
     respond_to do |format|
       if @shop.update(shop_params)
         format.html { redirect_to shop_url(@shop), notice: "Shop was successfully updated." }
-        format.json { render :show, status: :ok, location: @shop }
+        # format.json { render :show, status: :ok, location: @shop }
       else
         format.turbo_stream { render turbo_stream: turbo_stream.replace("#{helpers.dom_id(@shop)}") }
-        format.html { render :edit, status: :unprocessable_entity }
+        # format.html { render :edit, status: :unprocessable_entity }
       end
     end
   end
@@ -53,7 +53,7 @@ class ShopsController < ApplicationController
 
     respond_to do |format|
       format.turbo_stream { render turbo_stream: turbo_stream.remove("#{helpers.dom_id(@shop)}_item") }
-      format.html { redirect_to shops_url, notice: "Shop was successfully destroyed." }
+      # format.html { redirect_to shops_url, notice: "Shop was successfully destroyed." }
     end
   end
 
